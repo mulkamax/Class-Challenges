@@ -1,0 +1,41 @@
+/*****************************
+* CODING CHALLENGE 2
+*/
+
+/*
+John and Mike both play basketball in different teams. In the latest 3 games, John's team scored 89, 120 and 103 points, while Mike's team scored 116, 94 and 123 points.
+
+1. Calculate the average score for each team
+2. Decide which teams wins in average (highest average score), and print the winner to the console. Also include the average score in the output.
+3. Then change the scores to show different winners. Don't forget to take into account there might be a draw (the same average score)
+
+4. EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. Like before, log the average winner to the console. HINT: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
+5. Like before, change the scores to generate different winners, keeping in mind there might be draws.
+
+GOOD LUCK 😀
+*/
+
+var avgJohn, avgMike, avgMary;
+avgJohn = (116 + 90 + 103)/3;
+avgMike = (116 + 91 + 103)/3;
+avgMary = (116 + 91 + 103)/3;
+
+console.log('John\'s average score:', avgJohn);
+console.log('Mike\'s average score:', avgMike);
+console.log('Mary\'s average score:', avgMary);
+
+if (avgJohn > avgMike && avgJohn > avgMary) {
+    console.log('John has the highest average score.');
+} else if (avgMike > avgJohn && avgMike > avgMary) {
+    console.log('Mike has the highest average score.');
+} else if (avgMary > avgJohn && avgMary > avgMike) {
+    console.log('Mary has the highest average score.');
+} else if (avgJohn === avgMike && avgJohn === avgMary) {
+    console.log('Mike, Mary and John have a draw.');
+} else if (avgMike === avgJohn) {
+    console.log('Mike and John have a draw.');
+} else if (avgMike === avgMary) {
+    console.log('Mike and Mary have a draw.');
+} else if (avgJohn === avgMary) {
+    console.log('John and Mary have a draw.');
+}
