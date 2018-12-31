@@ -1,0 +1,54 @@
+/*****************************
+* CODING CHALLENGE 3
+*/
+
+/*
+John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
+
+To tip the waiter a fair amount, John created a simple tip calculator (as a function). He likes to tip 20% of the bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+
+In the end, John would like to have 2 arrays:
+1) Containing all three tips (one for each bill)
+2) Containing all three final paid amounts (bill + tip).
+
+(NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+
+GOOD LUCK 😀
+*/
+
+var tipCalculator = function(bills) {
+    var tips = [0, 0, 0]
+    if (bills[0] < 50) {
+        tips[0] = bills[0]*.2;
+    } else if (bills[0] >= 50 && bills[0] <= 200) {
+        tips[0] = bills[0]*.15;
+    } else {
+        tips[0] = bills[0]*.1;
+    }
+    if (bills[1] < 50) {
+        tips[1] = bills[1]*.2;
+    } else if (bills[1] >= 50 && bills[1] <= 200) {
+        tips[1] = bills[1]*.15;
+    } else {
+        tips[1] = bills[1]*.1;
+    }
+    if (bills[2] < 50) {
+        tips[2] = bills[2]*.2;
+    } else if (bills[2] >= 50 && bills[2] <= 200) {
+        tips[2] = bills[2]*.15;
+    } else {
+        tips[2] = bills[2]*.1;
+    }
+    return tips;
+}
+var bills = [124, 48, 268];
+console.log(tipCalculator(bills));
+
+var totalBill = function(bills) {
+    var total = [0, 0, 0];
+    total[0] = bills[0] + tipCalculator(bills)[0];
+    total[1] = bills[1] + tipCalculator(bills)[1];
+    total[2] = bills[2] + tipCalculator(bills)[2];
+    return total;
+}
+console.log(totalBill(bills));
